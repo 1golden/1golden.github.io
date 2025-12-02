@@ -1,12 +1,186 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>1golden — 个人主页</title>
+  <meta name="description" content="1golden 的个人主页 — 简介与联系方式" />
+  <style>
+    :root{
+      --bg:#f6f8fa;
+      --card:#ffffff;
+      --accent:#2d6a73;
+      --muted:#6b7280;
+      --radius:12px;
+      --max-width:900px;
+      --gutter:24px;
+      --shadow: 0 6px 20px rgba(16,24,40,0.08);
+      --glass: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.8));
+      color-scheme: light;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(800px 800px at -10% -10%, rgba(45,106,115,0.06), transparent),
+        radial-gradient(600px 600px at 120% 120%, rgba(45,106,115,0.03), transparent),
+        var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap{
+      max-width:var(--max-width);
+      margin:48px auto;
+      padding:var(--gutter);
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+      display:flex;
+      gap:28px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .avatar{
+      width:128px;
+      height:128px;
+      border-radius:20px;
+      flex:0 0 128px;
+      background:linear-gradient(135deg,var(--accent),#5aa7a7);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:3rem;
+      font-weight:700;
+      box-shadow: 0 8px 30px rgba(45,106,115,0.12);
+    }
+
+    .meta{
+      flex:1 1 auto;
+      min-width:220px;
+    }
+
+    h1{
+      margin:0 0 6px 0;
+      font-size:1.6rem;
+      color:#0f1724;
+    }
+
+    .role{
+      margin:0 0 14px 0;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    p.lead{
+      margin:0 0 16px 0;
+      color:#253244;
+      line-height:1.6;
+    }
+
+    .contacts{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      color:white;
+      background:var(--accent);
+      border:0;
+      cursor:pointer;
+      transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+      box-shadow: 0 6px 18px rgba(45,106,115,0.12);
+    }
+
+    .btn:hover{ transform:translateY(-3px); }
+
+    .muted{
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    .email{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+      background:transparent;
+      border-radius:8px;
+      padding:6px 8px;
+    }
+
+    footer{
+      margin-top:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width:640px){
+      .card{ padding:18px; gap:16px; }
+      .avatar{ width:96px; height:96px; flex:0 0 96px; font-size:2.4rem; border-radius:14px;}
+    }
+  </style>
 </head>
 <body>
-    <h1>你好，世界！</h1>
-    <p>欢迎来到我的第一个个人网站。这里是使用 GitHub Pages 搭建的。</p>
+  <main class="wrap" role="main">
+    <section class="card" aria-labelledby="intro-heading">
+      <div class="avatar" aria-hidden="true">1G</div>
+
+      <div class="meta">
+        <h1 id="intro-heading">1golden</h1>
+        <div class="role">Open source contributor</div>
+
+        <p class="lead">
+          Hello!
+        </p>
+
+        <div class="contacts" role="region" aria-label="联系方式">
+          <a class="btn" href="mailto:1golden@example.com">✉️ 发邮件</a>
+          <a class="btn" style="background:#0f172a" href="https://github.com/1golden" target="_blank" rel="noopener">🐙 GitHub</a>
+          <a class="btn" style="background:#0ea5a4" href="https://1golden.github.io" target="_blank" rel="noopener">🏠 我的博客</a>
+        </div>
+
+        <div style="margin-top:12px" class="muted">
+          email： <a class="email" href="mailto:1golden@example.com">sy2439213@buaa.edu.cn</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:18px" class="card" aria-labelledby="about-heading">
+      <div style="flex:1 1 100%">
+        <h2 id="about-heading" style="margin:0 0 8px 0">About me</h2>
+        <p class="muted" style="margin:0;line-height:1.6">
+          I am a master's student currently pursuing my degree. Welcome to exchange ideas!
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> 1golden — 构建于静态站点（GitHub Pages）
+    </footer>
+  </main>
+
+  <script>
+    // 动态年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

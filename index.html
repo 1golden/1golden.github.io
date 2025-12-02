@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>1golden — 个人主页</title>
-  <meta name="description" content="1golden 的个人主页 — 简介与联系方式" />
+  <title>1golden — Personal Homepage</title>
+  <meta name="description" content="1golden's personal homepage — short bio and contact" />
   <style>
     :root{
-      --bg:#f6f8fa;
+      --bg:#fbf9fe;
       --card:#ffffff;
-      --accent:#2d6a73;
-      --muted:#6b7280;
+      --accent:#8b7fc6; /* soft lavender */
+      --accent-2:#bfaee8; /* lighter lavender */
+      --muted:#6b6072;
       --radius:12px;
       --max-width:900px;
       --gutter:24px;
-      --shadow: 0 6px 20px rgba(16,24,40,0.08);
-      --glass: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.8));
+      --shadow: 0 8px 28px rgba(99,77,137,0.08);
       color-scheme: light;
     }
 
     html,body{
       height:100%;
       margin:0;
-      font-family: "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-family: "Inter", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
       background:
-        radial-gradient(800px 800px at -10% -10%, rgba(45,106,115,0.06), transparent),
-        radial-gradient(600px 600px at 120% 120%, rgba(45,106,115,0.03), transparent),
+        radial-gradient(700px 700px at -10% -10%, rgba(139,127,198,0.06), transparent),
+        radial-gradient(500px 500px at 110% 110%, rgba(191,174,232,0.03), transparent),
         var(--bg);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
+      color:#2a2233;
     }
 
     .wrap{
       max-width:var(--max-width);
-      margin:48px auto;
+      margin:56px auto;
       padding:var(--gutter);
     }
 
@@ -44,34 +45,19 @@
       box-shadow:var(--shadow);
       display:flex;
       gap:28px;
-      align-items:center;
+      align-items:flex-start;
       flex-wrap:wrap;
     }
 
-    .avatar{
-      width:128px;
-      height:128px;
-      border-radius:20px;
-      flex:0 0 128px;
-      background:linear-gradient(135deg,var(--accent),#5aa7a7);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:white;
-      font-size:3rem;
-      font-weight:700;
-      box-shadow: 0 8px 30px rgba(45,106,115,0.12);
-    }
-
     .meta{
-      flex:1 1 auto;
+      flex:1 1 100%;
       min-width:220px;
     }
 
     h1{
       margin:0 0 6px 0;
       font-size:1.6rem;
-      color:#0f1724;
+      color:#1f1228;
     }
 
     .role{
@@ -82,7 +68,7 @@
 
     p.lead{
       margin:0 0 16px 0;
-      color:#253244;
+      color:#33283a;
       line-height:1.6;
     }
 
@@ -91,6 +77,7 @@
       gap:12px;
       flex-wrap:wrap;
       align-items:center;
+      margin-top:8px;
     }
 
     .btn{
@@ -106,7 +93,7 @@
       border:0;
       cursor:pointer;
       transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
-      box-shadow: 0 6px 18px rgba(45,106,115,0.12);
+      box-shadow: 0 8px 20px rgba(139,127,198,0.12);
     }
 
     .btn:hover{ transform:translateY(-3px); }
@@ -132,54 +119,54 @@
       font-size:0.85rem;
     }
 
+    h2{ margin-top:0; }
+
     /* Responsive */
     @media (max-width:640px){
       .card{ padding:18px; gap:16px; }
-      .avatar{ width:96px; height:96px; flex:0 0 96px; font-size:2.4rem; border-radius:14px;}
     }
   </style>
 </head>
 <body>
   <main class="wrap" role="main">
     <section class="card" aria-labelledby="intro-heading">
-      <div class="avatar" aria-hidden="true">1G</div>
-
       <div class="meta">
-        <h1 id="intro-heading">1golden</h1>
-        <div class="role">Open source contributor</div>
+        <h1 id="intro-heading">Yuting Wang</h1>
+        <div class="role">Frontend Enthusiast · Technical Writer · Open Source Contributor</div>
 
         <p class="lead">
-          Hello!
+           Hello! I’m currently pursuing a master’s degree, with research centered on Retrieval-Augmented Generation. Looking forward to meaningful exchanges!
         </p>
 
-        <div class="contacts" role="region" aria-label="联系方式">
-          <a class="btn" href="mailto:1golden@example.com">✉️ 发邮件</a>
-          <a class="btn" style="background:#0f172a" href="https://github.com/1golden" target="_blank" rel="noopener">🐙 GitHub</a>
-          <a class="btn" style="background:#0ea5a4" href="https://1golden.github.io" target="_blank" rel="noopener">🏠 我的博客</a>
+        <div class="contacts" role="region" aria-label="Contact">
+          <a class="btn" href="mailto:1golden@example.com">✉️ Email</a>
+          <a class="btn" style="background:#221b2f" href="https://github.com/1golden" target="_blank" rel="noopener">🐙 GitHub</a>
+          <a class="btn" style="background:linear-gradient(90deg,var(--accent),var(--accent-2))" href="https://1golden.github.io" target="_blank" rel="noopener">🏠 Blog</a>
         </div>
 
         <div style="margin-top:12px" class="muted">
-          email： <a class="email" href="mailto:1golden@example.com">sy2439213@buaa.edu.cn</a>
+          Email: <a class="email" href="mailto:1golden@example.com">sy2439213@buaa.edu.cn</a>
         </div>
       </div>
     </section>
 
     <section style="margin-top:18px" class="card" aria-labelledby="about-heading">
       <div style="flex:1 1 100%">
-        <h2 id="about-heading" style="margin:0 0 8px 0">About me</h2>
+        <h2 id="about-heading" style="margin:0 0 8px 0">About — Short</h2>
         <p class="muted" style="margin:0;line-height:1.6">
-          I am a master's student currently pursuing my degree. Welcome to exchange ideas!
+          I like breaking complex problems into small, solvable pieces and documenting the results.
+          If you'd like to collaborate or simply say hello, feel free to reach out by email.
         </p>
       </div>
     </section>
 
     <footer>
-      © <span id="year"></span> 1golden — 构建于静态站点（GitHub Pages）
+      © <span id="year"></span> 1golden — Built with GitHub Pages
     </footer>
   </main>
 
   <script>
-    // 动态年份
+    // dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
